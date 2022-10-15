@@ -20,10 +20,13 @@ const STYLES = StyleSheet.create(
   )
 );
 
-const Span: React.FC<ISpanProps> = ({ children, color, ...rest }) => (
-  <Text {...rest} style={STYLES[color]}>
-    {children}
-  </Text>
-);
+const Span: React.FC<ISpanProps> = ({ children, color, style, ...rest }) => {
+  const styles = [STYLES[color], ...(Array.isArray(style) ? style : [style])].filter(Boolean);
+  return (
+    <Text {...rest} style={styles}>
+      {children}
+    </Text>
+  );
+};
 
 export default Span;

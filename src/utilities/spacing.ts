@@ -1,5 +1,5 @@
 export const MAX_LINE_WIDTH_PIXELS = 880;
-export const MAX_LINE_WIDTH = 100;
+export const MAX_LINE_WIDTH = 110;
 export const SPACING_INCREMENT = MAX_LINE_WIDTH_PIXELS / MAX_LINE_WIDTH;
 
 /**

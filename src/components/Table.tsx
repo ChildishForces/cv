@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from '@react-pdf/renderer';
+import EmptyLine from '@components/EmptyLine';
 import { useAvailableSpace } from '@utilities/availableSpace';
 import { spacing } from '@utilities/spacing';
 import { TableProvider } from '@utilities/tableContext';
@@ -48,16 +49,19 @@ const Table: React.FC<React.PropsWithChildren<ITableProps>> = ({ columns, childr
   }, [columns, availableSpace, totalEffectiveColumns]);
 
   return (
-    <View style={STYLES.table}>
-      {React.Children.map(children, (child, index) => (
-        <TableProvider
-          value={{ columnWidths, row: index, rowCount: React.Children.count(children) }}
-          key={index}
-        >
-          {child}
-        </TableProvider>
-      ))}
-    </View>
+    <>
+      <View style={STYLES.table}>
+        {React.Children.map(children, (child, index) => (
+          <TableProvider
+            value={{ columnWidths, row: index, rowCount: React.Children.count(children) }}
+            key={index}
+          >
+            {child}
+          </TableProvider>
+        ))}
+      </View>
+      <EmptyLine />
+    </>
   );
 };
 

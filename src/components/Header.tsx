@@ -1,37 +1,70 @@
 import * as React from 'react';
 import BaseText from '@components/BaseText';
 import Span from '@components/Span';
+import { COLORS } from '@utilities/theme';
+
+type SupportedTypes = 'String' | 'Int' | 'IExperience';
 
 interface IHeaderProps {
   title: string;
-  type: 'string' | 'string[]' | 'enum';
+  type: SupportedTypes | 'enum' | SupportedTypes[];
+  isArray?: boolean;
+}
+
+interface ITupleProps {
+  types: SupportedTypes[];
 }
 
 interface IMaybeArray extends Pick<IHeaderProps, 'title'> {
   isArray?: boolean;
+  type: SupportedTypes | SupportedTypes[];
 }
+
+const typeColor = (type: IHeaderProps['type']): keyof typeof COLORS => {
+  switch (type) {
+    case 'IExperience':
+      return 'accentColor4';
+    default:
+      return 'accentColor3';
+  }
+};
+
+const TypeRenderer: React.FC<Pick<IHeaderProps, 'type'>> = ({ type }) => (
+  <Span color={typeColor(type)}>{type}</Span>
+);
 
 const EnumRenderer: React.FC<Pick<IHeaderProps, 'title'>> = ({ title }) => (
   <>
     <Span color="accentColor2">enum </Span>
-    <Span color="accentColor4">{title}</Span>:<Span color="accentColor5"> String</Span>
+    <Span color="accentColor4">{title}</Span>: <TypeRenderer type="String" />
   </>
 );
 
-const ArrayRenderer: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <Span color="accentColor5">[{children}]</Span>
+const ArrayRenderer: React.FC<Pick<IHeaderProps, 'type'>> = ({ type }) => (
+  <Span color="accentColor5">
+    [<TypeRenderer type={type} />]
+  </Span>
 );
 
-const StringRenderer: React.FC<IMaybeArray> = ({ title, isArray }) => {
+const TupleRenderer: React.FC<ITupleProps> = ({ types }) => {
+  const typesRendered = React.useMemo(
+    () =>
+      types.flatMap((type, index) => {
+        if (index === types.length - 1) return [<TypeRenderer type={type} key={type} />];
+        return [<TypeRenderer type={type} key={type} />, ', '];
+      }),
+    [types]
+  );
+  return <Span color="accentColor5">({typesRendered})</Span>;
+};
+
+const NonEnumRenderer: React.FC<IMaybeArray> = ({ title, type, isArray }) => {
   // Renderers
   const returnType = React.useMemo(() => {
-    if (!isArray) return 'String';
-    return (
-      <ArrayRenderer>
-        <Span color="accentColor6">String</Span>
-      </ArrayRenderer>
-    );
-  }, [isArray]);
+    if (Array.isArray(type)) return <TupleRenderer types={type} />;
+    if (!isArray) return <Span color={typeColor(type)}>{type}</Span>;
+    return <ArrayRenderer type={type} />;
+  }, [isArray, type]);
 
   return (
     <>
@@ -41,19 +74,23 @@ const StringRenderer: React.FC<IMaybeArray> = ({ title, isArray }) => {
   );
 };
 
-const renderType = (title: string, value: IHeaderProps['type']): ReturnType<React.FC> => {
-  switch (value) {
+const renderType = (
+  title: string,
+  type: IHeaderProps['type'],
+  isArray?: boolean
+): ReturnType<React.FC> => {
+  switch (type) {
     case 'enum':
       return <EnumRenderer title={title} />;
-    case 'string':
-      return <StringRenderer title={title} />;
-    case 'string[]':
-      return <StringRenderer title={title} isArray />;
+    default:
+      return <NonEnumRenderer title={title} type={type} isArray={isArray} />;
   }
 };
 
-const Header: React.FC<IHeaderProps> = ({ title, type }) => (
-  <BaseText color="alphaHighMed">{renderType(title, type)}</BaseText>
+const Header: React.FC<IHeaderProps> = ({ title, type, isArray }) => (
+  <BaseText color="alphaHighMed" style={{ lineHeight: 1.125 }}>
+    {renderType(title, type, isArray)}
+  </BaseText>
 );
 
 export default Header;

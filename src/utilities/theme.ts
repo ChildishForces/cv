@@ -38,7 +38,7 @@ export const COLORS = {
   langSwift: '#f05138',
   langTypescript: '#3178c6',
   langJavascript: '#f1e05a',
-  langPHP: '#4f5d95',
+  langPHP: '#7A86B8',
 
   hoverBackground: '#282a36',
   selectionBackground: '#2a2c38',
