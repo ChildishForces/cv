@@ -18,7 +18,7 @@ export const EXPERIENCE: IJob[] = [
       'For the service I had to break the monolithic server application written in Javascript, NodeJS, and Express down into many efficient micro services, written in Typescript. This means that each function is executed on demand and is infinitely horizontally scalable, rather than constantly alive and listening for requests. As it was a client requirement to use Azure, and given the lack of support for Azure in the Serverless Framework ecosystem, this included creating and maintaining a miniature framework to better realise the concept of DRY.',
       'I additionally had the opportunity to define coding standards, branch management strategies and, as lead on an, albeit small, team, took time to mentor team members and present concepts and technologies to the team and wider department.',
     ],
-    from: '1/7/2021',
+    from: '1/6/2021',
   },
   {
     title: 'Senior Full Stack Developer',
@@ -28,7 +28,7 @@ export const EXPERIENCE: IJob[] = [
       'After becoming a senior I took on a larger role in planning projects, remotely managing teams of developers spanning multiple countries, developing and maintaining company-wide boilerplates for use in projects, learning new technologies for future projects and implementing into our existing stacks and became specialised in a few specific areas, including native development for MacOS, iOS and Android. I also started learning a few new languages such as C# and Kotlin to improve the range of platforms I could develop for. My time at JayStack at this point has given me a huge range of experience, developing for multiple specialist industries and encountering a myriad technical challenges, and has been the most valuable experience in my working career.',
     ],
     from: '1/8/2019',
-    to: '1/7/2021',
+    to: '1/6/2021',
   },
   {
     title: 'Full Stack Developer',
