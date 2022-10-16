@@ -64,6 +64,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.ts', '.tsx'] }],
+    'react/jsx-no-comment-textnodes': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'off',
     'react/no-danger': 'off',

@@ -11,6 +11,7 @@ import TableRow from '@components/TableRow';
 import ExpertiseList from '@containers/ExpertiseList';
 import ReleaseNotes from '@containers/ReleaseNotes';
 import SecondPageExperience from '@containers/SecondPageExperience';
+import InterestsList from "@containers/InterestsList";
 
 const STYLES = StyleSheet.create({
   specialHeader: {
@@ -26,7 +27,7 @@ export const SecondPage: React.FC = () => (
       <EmptyLine />
       <Table columns={[1, 2]}>
         <TableRow>
-          <Header type={['String', 'Int']} title="Expertise" isArray />
+          <Header type="enum" title="Interests" isArray />
           <View style={STYLES.specialHeader}>
             <Header type="IExperience" isArray title="Experience" />
             <BaseText style={{ lineHeight: 1.125 }}>
@@ -35,7 +36,7 @@ export const SecondPage: React.FC = () => (
           </View>
         </TableRow>
         <TableRow>
-          <ExpertiseList />
+          <InterestsList />
           <SecondPageExperience />
         </TableRow>
       </Table>
