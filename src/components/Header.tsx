@@ -13,6 +13,7 @@ interface IHeaderProps {
 
 interface ITupleProps {
   types: SupportedTypes[];
+  isArray?: boolean;
 }
 
 interface IMaybeArray extends Pick<IHeaderProps, 'title'> {
@@ -46,7 +47,7 @@ const ArrayRenderer: React.FC<Pick<IHeaderProps, 'type'>> = ({ type }) => (
   </Span>
 );
 
-const TupleRenderer: React.FC<ITupleProps> = ({ types }) => {
+const TupleRenderer: React.FC<ITupleProps> = ({ types, isArray }) => {
   const typesRendered = React.useMemo(
     () =>
       types.flatMap((type, index) => {
@@ -55,13 +56,14 @@ const TupleRenderer: React.FC<ITupleProps> = ({ types }) => {
       }),
     [types]
   );
+  if (isArray) return <Span color="accentColor5">[({typesRendered})]</Span>;
   return <Span color="accentColor5">({typesRendered})</Span>;
 };
 
 const NonEnumRenderer: React.FC<IMaybeArray> = ({ title, type, isArray }) => {
   // Renderers
   const returnType = React.useMemo(() => {
-    if (Array.isArray(type)) return <TupleRenderer types={type} />;
+    if (Array.isArray(type)) return <TupleRenderer types={type} isArray={isArray} />;
     if (!isArray) return <Span color={typeColor(type)}>{type}</Span>;
     return <ArrayRenderer type={type} />;
   }, [isArray, type]);

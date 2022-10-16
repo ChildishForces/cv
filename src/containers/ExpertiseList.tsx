@@ -21,9 +21,15 @@ const renderExpertise = (exp: IExpertiseWithYears, availableSpace: number) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const renderArrayIndex = (exp: IExpertiseWithYears, _: number) => (
+  <Span color="accentColor5">[]</Span>
+);
+
 const ExpertiseList: React.FC = () => (
   <View>
     <List<IExpertiseWithYears>
+      prefix={renderArrayIndex}
       items={EXPERTISE_WITH_YEARS}
       keyGetter={(exp) => exp.name}
       renderItem={renderExpertise}

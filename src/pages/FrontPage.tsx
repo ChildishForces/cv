@@ -29,7 +29,7 @@ export const FrontPage: React.FC = () => (
       </Table>
       <Table columns={[1, 2]}>
         <TableRow>
-          <Header type={['String', 'Int']} title="Expertise" />
+          <Header type={['String', 'Int']} title="Expertise" isArray />
           <Header type="IExperience" isArray title="Experience" />
         </TableRow>
         <TableRow>
