@@ -10,7 +10,7 @@ const renderExpertise = (exp: IExpertiseWithYears, availableSpace: number) => {
   return (
     <>
       <Span color="accentAlt">{exp.name} </Span>
-      <Span color="borderColor">
+      <Span color="border3">
         {repeatStringFor(availableSpace - exp.name.length - timeString.length - 2, '•')}
       </Span>
       <Span color="alphaMed" style={{ color: interpolateYearColors(exp.years) }}>

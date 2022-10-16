@@ -8,6 +8,7 @@ import Span from '@components/Span';
 import { IJob } from '@data/experience';
 import { useAvailableSpace } from '@utilities/availableSpace';
 import { repeatStringFor } from '@utilities/strings';
+import Block from "@components/Block";
 
 interface IRecentJobProps {
   job: IJob;
@@ -18,7 +19,7 @@ const RecentJob: React.FC<IRecentJobProps> = ({ job }) => {
 
   // Computed Values
   const timeStringLength = 2 + (job.to ? 8 : 7) + 8;
-  const spaceBetween = availableSpace - timeStringLength - job.company.length;
+  const spaceBetween = availableSpace - timeStringLength - (job.company?.length ?? 0);
 
   // Renderers
   const renderDescriptionParagraph = React.useCallback(
@@ -40,11 +41,10 @@ const RecentJob: React.FC<IRecentJobProps> = ({ job }) => {
       <View>
         <BaseText>
           <Span color="alphaHighMed">{job.company} </Span>
-          {repeatStringFor(spaceBetween - 2, '•')}
-          <Span color="border2">
-            {' '}
+          <Span color="border3">
+            {repeatStringFor(spaceBetween - 2, '•')}{' '}
             <Span color="alphaHighMed">{moment(job.from, 'DD/MM/YYYY').format('MMM YYYY')}</Span>
-            <Span color="border2"> - </Span>
+            <Span color="alphaMedLower"> - </Span>
             <Span color="alphaHighMed">
               {job.to ? moment(job.to, 'DD/MM/YYYY').format('MMM YYYY') : 'Current'}
             </Span>
@@ -58,5 +58,11 @@ const RecentJob: React.FC<IRecentJobProps> = ({ job }) => {
     </View>
   );
 };
+
+export const renderJobBlock = (job: IJob, index: number, array: IJob[]) => (
+  <Block key={index} isLastIndex={index === array.length - 1}>
+    <RecentJob job={job} />
+  </Block>
+);
 
 export default RecentJob;

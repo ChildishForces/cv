@@ -1,0 +1,15 @@
+diff --git a/node_modules/@react-pdf/renderer/index.d.ts b/node_modules/@react-pdf/renderer/index.d.ts
+index f257813..b746bf8 100644
+--- a/node_modules/@react-pdf/renderer/index.d.ts
++++ b/node_modules/@react-pdf/renderer/index.d.ts
+@@ -58,6 +58,10 @@ declare namespace ReactPDF {
+      * @see https://react-pdf.org/advanced#orphan-&-widow-protection
+      */
+     minPresenceAhead?: number;
++    /**
++     * Fix to make SVG stop complaining about having children
++     */
++    children?: React.ReactNode;
+   }
+ 
+   interface PageProps extends NodeProps {

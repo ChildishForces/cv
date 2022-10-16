@@ -41,4 +41,15 @@ export const EXPERIENCE: IJob[] = [
     from: '1/4/2018',
     to: '1/8/2019',
   },
+  {
+    title: 'Technical SEO Executive',
+    company: 'Ambergeen Internet Marketing',
+    type: 'Full-Time',
+    description: [
+      'At Ambergreen I primarily worked on existing sites making adjustments to improve the marketing. This involved doing research based on search volume, planning content silos, implementing features to the site to improve website ranking such as breadcrumbs, JSON-LD schema, correct usage of tags, etc., improving the performance of websites so that they would load as quickly as possible (as that has a major impact on page ranking), implementing analytics platforms, defining site journeys, implementing A/B testing to improve conversion rate and efficacy of paid advertising.',
+      'Whilst at Ambergreen I also developed a suite of tools in Laravel to improve productivity in my department. It served a range of functions, using various Google services, reducing a particularly monotonous task from a full day to half an hour. Whilst developing this suite of tools I realised that I wanted to work exclusively on development, rather than marketing.',
+    ],
+    from: '1/1/2016',
+    to: '1/03/2017',
+  },
 ];

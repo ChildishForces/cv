@@ -43,7 +43,6 @@ module.exports = {
           { pattern: '@data/**', group: 'internal', position: 'after' },
           { pattern: '@fonts/**', group: 'internal', position: 'after' },
           { pattern: '@pages/**', group: 'internal', position: 'after' },
-          { pattern: '@svg/**', group: 'internal', position: 'after' },
           { pattern: '@utilities/**', group: 'internal', position: 'after' },
         ],
         alphabetize: { order: 'asc', caseInsensitive: true },
