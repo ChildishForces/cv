@@ -26,7 +26,7 @@ export const SecondPage: React.FC = () => (
       <EmptyLine />
       <Table columns={[1, 2]}>
         <TableRow>
-          <Header type="enum" title="Interests" isArray />
+          <Header type="IProject" title="Projects" isArray />
           <View style={STYLES.specialHeader}>
             <Header type="IExperience" isArray title="Experience" />
             <BaseText style={{ lineHeight: 1.125 }}>

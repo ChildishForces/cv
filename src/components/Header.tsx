@@ -3,7 +3,7 @@ import BaseText from '@components/BaseText';
 import Span from '@components/Span';
 import { COLORS } from '@utilities/theme';
 
-type SupportedTypes = 'String' | 'Int' | 'IExperience';
+type SupportedTypes = 'String' | 'Int' | 'IExperience' | 'IProject';
 
 interface IHeaderProps {
   title: string;
@@ -24,6 +24,7 @@ interface IMaybeArray extends Pick<IHeaderProps, 'title'> {
 const typeColor = (type: IHeaderProps['type']): keyof typeof COLORS => {
   switch (type) {
     case 'IExperience':
+    case 'IProject':
       return 'accentColor4';
     default:
       return 'accentColor3';

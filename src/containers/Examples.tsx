@@ -6,7 +6,7 @@ import EmptyLine from '@components/EmptyLine';
 import paragraph from '@components/Paragraph';
 import Paragraph from '@components/Paragraph';
 import Span from '@components/Span';
-import { EXAMPLES, IExample } from '@data/examples';
+import { EXAMPLES, IProject } from '@data/examples';
 import { useAvailableSpace } from '@utilities/availableSpace';
 import { BULLET, repeatStringFor } from '@utilities/strings';
 
@@ -35,7 +35,11 @@ const Examples: React.FC = () => {
   const availableSpace = useAvailableSpace();
 
   const renderExample = React.useCallback(
-    ({ name, technologies, platforms, paragraphs }: IExample, index: number, array: IExample[]) => {
+    (
+      { name, position, technologies, platforms, paragraphs }: IProject,
+      index: number,
+      array: IProject[]
+    ) => {
       const platformsString = platforms.join(', ');
       const technologiesString = technologies.join(', ');
       const spacerLength = availableSpace - name.length - platformsString.length - 1;
@@ -51,6 +55,8 @@ const Examples: React.FC = () => {
             </BaseText>
             <EmptyLine />
             <BaseText color="alphaMed">Notable Tech: {technologiesString}</BaseText>
+            <EmptyLine />
+            <BaseText color="alphaMed">Position: {position}</BaseText>
             <EmptyLine />
             {paragraphs.map(renderParagraph)}
           </Block>

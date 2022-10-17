@@ -1,13 +1,15 @@
-export interface IExample {
+export interface IProject {
   name: string;
+  position: string;
   platforms: string[];
   technologies: string[];
   paragraphs: string[];
 }
 
-export const EXAMPLES: IExample[] = [
+export const EXAMPLES: IProject[] = [
   {
     name: 'Ascenti Reach',
+    position: 'Lead Mobile Developer',
     platforms: ['Android', 'iOS'],
     technologies: ['React Native', 'Reanimated', 'Redux'],
     paragraphs: [
@@ -19,6 +21,7 @@ export const EXAMPLES: IExample[] = [
   },
   {
     name: 'Mintago',
+    position: 'Agency Senior (JayStack)',
     platforms: ['Android', 'iOS'],
     technologies: ['React Native', 'Reanimated', 'Redux'],
     paragraphs: [
