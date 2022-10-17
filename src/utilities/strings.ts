@@ -14,3 +14,5 @@ export const repeatStringFor = (characterLength: number, repeatedString: string)
 
   return returnedString;
 };
+
+export const BULLET = '•';

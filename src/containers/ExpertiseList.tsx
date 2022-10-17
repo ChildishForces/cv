@@ -5,7 +5,7 @@ import List from '@components/List';
 import Span from '@components/Span';
 import { EXPERTISE_WITH_YEARS, IExpertiseWithYears, interpolateYearColors } from '@data/expertise';
 import { groupBy, SortGroup } from '@utilities/array';
-import { repeatStringFor } from '@utilities/strings';
+import { BULLET, repeatStringFor } from '@utilities/strings';
 
 const renderExpertise = (exp: IExpertiseWithYears, availableSpace: number) => {
   const timeString = `${exp.years}Y`;
@@ -13,7 +13,7 @@ const renderExpertise = (exp: IExpertiseWithYears, availableSpace: number) => {
     <>
       <Span color="accentAlt">{exp.name} </Span>
       <Span color="border3">
-        {repeatStringFor(availableSpace - exp.name.length - timeString.length - 2, '•')}
+        {repeatStringFor(availableSpace - exp.name.length - timeString.length + 1, BULLET)}
       </Span>
       <Span color="alphaMed" style={{ color: interpolateYearColors(exp.years) }}>
         {' '}

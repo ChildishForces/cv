@@ -3,6 +3,6 @@ import { View } from '@react-pdf/renderer';
 import { renderJobBlock } from '@components/RecentJob';
 import { EXPERIENCE } from '@data/experience';
 
-const SecondPageExperience: React.FC = () => <View>{EXPERIENCE.slice(2, 5).map(renderJobBlock)}</View>;
+const ThirdPageExperience: React.FC = () => <View>{EXPERIENCE.slice(5).map(renderJobBlock)}</View>;
 
-export default SecondPageExperience;
+export default ThirdPageExperience;

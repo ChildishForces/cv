@@ -9,7 +9,7 @@ interface IBaseTextProps extends ReactPDF.TextProps {
 
 const STYLES = StyleSheet.create({
   text: {
-    fontFamily: 'FiraCode',
+    fontFamily: 'JetBrainsMono',
     fontWeight: 400,
     fontSize: SPACING_INCREMENT,
     lineHeight: 1.5,

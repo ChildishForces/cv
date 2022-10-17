@@ -42,14 +42,45 @@ export const EXPERIENCE: IJob[] = [
     to: '1/8/2019',
   },
   {
+    title: 'Development Tutor',
+    type: 'Part-Time',
+    description: [
+      'At this point my wife and I decided to move to Hungary for a few years, so that she could be closer to family.',
+      'When I first arrived in Hungary, whilst looking for a job I was referred to a family through a friend in their employ to teach their eldest to program. When I first arrived the student was familiar with many concepts in programming after having used scratch with Minecraft for some months. I then taught him how to apply that logic to modern Javascript. The student was very bright and we made some excellent progress in the short time we spent together but unfortunately due to a family emergency we had to stop and at the time they were ready to resume I was already employed by JayStack.',
+    ],
+    from: '1/1/2018',
+    to: '1/2/2018',
+  },
+  {
+    title: 'Various Personal Projects',
+    type: 'Part-Time',
+    description: [
+      'After I had made the decision to move to Hungary and my employer was bought by another company in Canada with an extensive SEO department I left to focus more on development. I spent the period between my previous employment until I left on personal projects, small contracts and learning new technologies and practices.',
+      'During this time I worked on a variety of projects, mostly with Laravel, Express, Socket.io, Vue & React.',
+    ],
+    from: '1/03/2017',
+    to: '1/1/2018',
+  },
+  {
     title: 'Technical SEO Executive',
     company: 'Ambergeen Internet Marketing',
     type: 'Full-Time',
     description: [
-      'At Ambergreen I primarily worked on existing sites, making adjustments to improve the marketing. This involved doing research based on search volume, planning content silos, implementing features to the site to improve website ranking such as breadcrumbs, JSON-LD schema, correct usage of tags, etc., improving the performance of websites so that they would load as quickly as possible (as that has a major impact on page ranking), implementing analytics platforms, defining site journeys, implementing A/B testing to improve conversion rate and efficacy of paid advertising.',
+      'At Ambergreen I primarily worked on existing sites, making adjustments to improve their organic marketing value. This involved doing research based on search volume, planning content silos, implementing features to the site to improve website ranking such as breadcrumbs, JSON-LD schema, correct usage of tags, etc., improving the performance of websites so that they would load as quickly as possible (as that has a major impact on page ranking), implementing analytics platforms, defining site journeys, implementing A/B testing to improve conversion rate and efficacy of paid advertising.',
       'Whilst at Ambergreen I also developed a suite of tools in Laravel to improve productivity in my department. It served a range of functions, using various Google services, reducing a particularly monotonous task from a full day to half an hour. Whilst developing this suite of tools I realised that I wanted to work exclusively on development, rather than marketing.',
     ],
     from: '1/1/2016',
     to: '1/03/2017',
+  },
+  {
+    title: 'Senior Web Developer',
+    company: 'PageNorth',
+    type: 'Full-Time',
+    description: [
+      'As my first commercial role in development I started as a junior in a web development company in Glenrothes, Scotland. It was a small team and I had the opportunity to become the senior developer there within a year. This involved planning projects, developing wordpress websites using PHP, SCSS and Javascript and assessing and improving SEO. I worked on a wide range of projects including new sites, optimisation of existing sites, developing utilities, plugins, themes and managing UNIX based server environments.',
+      'After about 2 years I was headhunted by a former manager to work in a role focused more on SEO than design/development.',
+    ],
+    from: '1/3/2014',
+    to: '1/12/2015',
   },
 ];

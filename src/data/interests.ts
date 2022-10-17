@@ -5,9 +5,16 @@ export const HOBBIES: string[] = [
   'Video Games',
   'Making Music',
   'Travelling',
+  'Watching Combat Sports',
 ];
 
-export const LANGUAGES: string[] = ['English', 'Scots', 'Polski', 'Español', 'Magyarul'];
+export const LANGUAGES: [string, string | undefined][] = [
+  ['English', undefined],
+  ['Scots', undefined],
+  ['Polski', 'Polish'],
+  ['Español', 'Spanish'],
+  ['Magyarul', 'Hungarian'],
+];
 
 export const TECHNOLOGY: string[] = [
   'Shader Programming',

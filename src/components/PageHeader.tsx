@@ -14,7 +14,7 @@ interface IPageHeaderProps {
 const PageHeader: React.FC<IPageHeaderProps> = ({ page, totalPages }) => {
   const availableSpace = useAvailableSpace();
   const pageString = `Page ${page} of ${totalPages}`;
-  const space = availableSpace - 39 - pageString.length;
+  const space = availableSpace - 36 - pageString.length;
 
   return (
     <View>

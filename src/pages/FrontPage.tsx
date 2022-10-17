@@ -15,7 +15,7 @@ import Profile from '@containers/Profile';
 export const FrontPage: React.FC = () => (
   <PdfPage size="A4">
     <View>
-      <PageHeader page={1} totalPages={2} />
+      <PageHeader page={1} totalPages={3} />
       <EmptyLine />
       <Table columns={[1, 2]}>
         <TableRow>

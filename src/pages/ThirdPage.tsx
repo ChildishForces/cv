@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from '@react-pdf/renderer';
 import BaseText from '@components/BaseText';
-import ContinuedOverleaf from '@components/ContinuedOverleaf';
 import EmptyLine from '@components/EmptyLine';
 import Header from '@components/Header';
 import PageHeader from '@components/PageHeader';
@@ -9,8 +8,9 @@ import PdfPage from '@components/PdfPage';
 import Span from '@components/Span';
 import Table from '@components/Table';
 import TableRow from '@components/TableRow';
-import Examples from '@containers/Examples';
-import SecondPageExperience from '@containers/SecondPageExperience';
+import InterestsList from '@containers/InterestsList';
+import ReleaseNotes from '@containers/ReleaseNotes';
+import ThirdPageExperience from '@containers/ThirdPageExperience';
 
 const STYLES = StyleSheet.create({
   specialHeader: {
@@ -22,7 +22,7 @@ const STYLES = StyleSheet.create({
 export const SecondPage: React.FC = () => (
   <PdfPage size="A4">
     <View>
-      <PageHeader page={2} totalPages={3} />
+      <PageHeader page={3} totalPages={3} />
       <EmptyLine />
       <Table columns={[1, 2]}>
         <TableRow>
@@ -35,11 +35,12 @@ export const SecondPage: React.FC = () => (
           </View>
         </TableRow>
         <TableRow>
-          <Examples />
-          <SecondPageExperience />
+          <InterestsList />
+          <ThirdPageExperience />
         </TableRow>
       </Table>
-      <ContinuedOverleaf />
+      <EmptyLine />
+      <ReleaseNotes />
     </View>
   </PdfPage>
 );
